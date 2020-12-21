@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwell56.security.cloud.service.sso.mapper.ModuleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jwell56.security.cloud.service.sso.entity.Module">
+    <result column="id" property="id" />
+        <result column="p_id" property="pId" />
+        <result column="module_name" property="moduleName" />
+        <result column="level" property="level" />
+        <result column="base_path" property="basePath" />
+        <result column="remark" property="remark" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        p_id, module_name, level, base_path, remark, create_time
+    </sql>
+
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwell56.security.cloud.service.netstruct.mapper.NetStructMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jwell56.security.cloud.service.netstruct.entity.NetStruct">
+        <result column="id" property="id"/>
+        <result column="area_id" property="areaId"/>
+        <result column="unit_id" property="unitId"/>
+        <result column="start_ip" property="startIp"/>
+        <result column="end_ip" property="endIp"/>
+        <result column="remark" property="remark"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <resultMap id="NetStructDtoMap" type="com.jwell56.security.cloud.service.netstruct.entity.dto.NetStructDto">
+        <result column="area_id" property="areaId"/>
+        <result column="unit_id" property="unitId"/>
+        <result column="area_pid" property="areaPid"/>
+        <result column="unit_pid" property="unitPid"/>
+        <result column="area_name" property="areaName"/>
+        <result column="unit_name" property="unitName"/>
+        <result column="start_ip" property="startIp"/>
+        <result column="end_ip" property="endIp"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        area_id, unit_id, start_ip, end_ip, remark, create_time
+    </sql>
+
+    <select id="selectNetStructDtoList" resultMap="NetStructDtoMap">
+        SELECT
+        area_id,
+        unit_id,
+        start_ip,
+        end_ip,
+        a.pid AS area_pid,
+        u.pid AS unit_pid,
+        a.`name` AS area_name,
+        u.`name` AS unit_name
+        FROM
+        base_area_unit_ip AS n
+        JOIN base_area_nav AS a ON a.id = n.area_id
+        JOIN base_unit_nav AS u ON u.id = n.unit_id
+        WHERE
+        <if test="map.areaId != null and map.areaId !=0">
+            (a.pid = #{map.areaId} OR a.id = #{map.areaId})
+            AND
+        </if>
+        <if test="map.unitId !=null and map.unitId !=0">
+            (u.pid = #{map.unitId} OR u.id = #{map.unitId})
+            AND
+        </if>
+        INET_ATON(#{map.ip}) BETWEEN INET_ATON(n.start_ip) AND INET_ATON(n.end_ip)
+    </select>
+</mapper>

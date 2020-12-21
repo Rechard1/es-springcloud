@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwell56.security.cloud.service.asset.mapper.AssetMapper">
+
+  <update id="important" parameterType="java.util.List">
+  update sys_asset set important = 1
+  where asset_id in
+  <foreach collection="assetIds" item="item" open="("  separator="," close=")">
+           #{item}
+           </foreach>
+  </update>
+
+</mapper>

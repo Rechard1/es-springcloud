@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: service-ids
+server:
+  max-http-header-size: 20480
+  port: 8090
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+logging.level.com.jwell56.security.cloud.service.ids.mapper: debug

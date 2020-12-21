@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwell56.security.cloud.service.sso.mapper.SysUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jwell56.security.cloud.service.sso.entity.SysUser">
+    <result column="id" property="id" />
+        <result column="age" property="age" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="real_name" property="realName" />
+        <result column="area_code" property="areaCode" />
+        <result column="role_id" property="roleId" />
+        <result column="area_name" property="areaName" />
+        <result column="phone_num" property="phoneNum" />
+        <result column="email" property="email" />
+        <result column="remark" property="remark" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        age, username, password, real_name, area_code, role_id, area_name, phone_num, email, remark, create_time
+    </sql>
+
+</mapper>

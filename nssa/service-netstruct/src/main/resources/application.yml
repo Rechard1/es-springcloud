@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: service-netstruct
+server:
+  max-http-header-size: 20480
+  port: 8085
+
+#定制化功能
+custom:
+  angang: off
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+logging.level.com.jwell56.security.cloud.service.netstruct.mapper: debug

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwell56.security.cloud.service.netstruct.mapper.AssetMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jwell56.security.cloud.service.netstruct.entity.Asset">
+    <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="manufacturer" property="manufacturer" />
+        <result column="remarks" property="remarks" />
+        <result column="model" property="model" />
+        <result column="type" property="type" />
+        <result column="asset_level" property="assetLevel" />
+        <result column="ip" property="ip" />
+        <result column="ip_num" property="ipNum" />
+        <result column="mac" property="mac" />
+        <result column="outer_ip" property="outerIp" />
+        <result column="outer_port" property="outerPort" />
+        <result column="sys_url" property="sysUrl" />
+        <result column="position" property="position" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="department" property="department" />
+        <result column="out_bandwidth" property="outBandwidth" />
+        <result column="in_bandwidth" property="inBandwidth" />
+        <result column="mirror" property="mirror" />
+        <result column="security_interface" property="securityInterface" />
+        <result column="upper_link" property="upperLink" />
+        <result column="lower_link" property="lowerLink" />
+        <result column="is_alarm" property="isAlarm" />
+        <result column="asset_number" property="assetNumber" />
+        <result column="functional_description" property="functionalDescription" />
+        <result column="asset_importance" property="assetImportance" />
+        <result column="version" property="version" />
+        <result column="operating_system" property="operatingSystem" />
+        <result column="cpu_info" property="cpuInfo" />
+        <result column="memory_size" property="memorySize" />
+        <result column="disc_size" property="discSize" />
+        <result column="is_sys" property="isSys" />
+        <result column="is_open_snmp" property="isOpenSnmp" />
+        <result column="snmp_version" property="snmpVersion" />
+        <result column="middleware" property="middleware" />
+        <result column="one_area_id" property="oneAreaId" />
+        <result column="one_area" property="oneArea" />
+        <result column="two_area_id" property="twoAreaId" />
+        <result column="two_area" property="twoArea" />
+        <result column="area_id" property="areaId" />
+        <result column="unit_id" property="unitId" />
+        <result column="manager" property="manager" />
+        <result column="manager_phone" property="managerPhone" />
+        <result column="maintainer" property="maintainer" />
+        <result column="maintainer_phone" property="maintainerPhone" />
+        <result column="technical_parameter" property="technicalParameter" />
+        <result column="domain" property="domain" />
+        <result column="is_legal_copy" property="isLegalCopy" />
+        <result column="database_info" property="databaseInfo" />
+        <result column="install_trendmicro" property="installTrendmicro" />
+        <result column="create_time" property="createTime" />
+        <result column="open_service" property="openService" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        name, manufacturer, remarks, model, type, asset_level, ip, ip_num, mac, outer_ip, outer_port, sys_url, position, start_time, end_time, department, out_bandwidth, in_bandwidth, mirror, security_interface, upper_link, lower_link, is_alarm, asset_number, functional_description, asset_importance, version, operating_system, cpu_info, memory_size, disc_size, is_sys, is_open_snmp, snmp_version, middleware, one_area_id, one_area, two_area_id, two_area, area_id, unit_id, manager, manager_phone, maintainer, maintainer_phone, technical_parameter, domain, is_legal_copy, database_info, install_trendmicro, create_time, open_service
+    </sql>
+
+</mapper>

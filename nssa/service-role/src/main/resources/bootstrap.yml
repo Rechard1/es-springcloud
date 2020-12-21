@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    config:
+      name: common,service-role
+      uri: http://localhost:8762
+      fail-fast: true

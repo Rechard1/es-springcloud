@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: service-role
+server:
+  port: 8019
+
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+logging.level.com.jwell56.security.cloud.service.role.mapper: debug

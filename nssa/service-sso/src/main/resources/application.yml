@@ -1,0 +1,52 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB # 单个文件大小
+      max-request-size: 500MB
+      enabled: true #开启
+  application:
+    name: service-sso
+server:
+  port: 8011
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+zuul:
+  routes:
+   # service-order: /service-order/**
+   # service-snmp: /service-snmp/**
+    #service-apt: /service-apt/**
+    service-asset: 
+      path: /service-asset/**
+      url: http://127.0.0.1:8087
+    #service-graph: /service-graph/**
+   # service-guard: /service-guard/**
+   # service-iac: /service-iac/**
+    service-netstruct: 
+      path: /service-netstruct/**
+      url: http://127.0.0.1:8085
+    service-role:
+      path: /service-role/**
+      url: http://127.0.0.1:8019
+    #service-statistic: /service-statistic/**
+    #service-virus: /service-virus/**
+   # service-syslog: /service-syslog/**
+    #service-protection: /service-protection/**
+    service-ids:
+      path: /service-ids/**
+      url: http://127.0.0.1:8090
+  host:
+    connect-timeout-millis: 60000 #HTTP连接超时要比Hystrix的大
+    socket-timeout-millis: 60000   #socket超时
+  # 开启默认配置，支持请求头的传递
+  sensitive-headers:
+  # 此处解决后端服务重定向导致用户浏览的 host 变成 后端服务的 host 问题
+  add-host-header: true
+ribbon:
+  # http建立socket超时时间,毫秒
+  ConnectTimeout: 60000
+  # http读取响应socket超时时间
+  ReadTimeout: 60000
+  # 重试负载均衡其他的实例最大重试次数,不包括首次server
+  MaxAutoRetriesNextServer: 2

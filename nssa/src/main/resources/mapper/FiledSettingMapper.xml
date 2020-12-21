@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwell56.security.cloud.service.ids.mapper.FiledSettingMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jwell56.security.cloud.service.ids.entity.FiledSetting">
+        <id column="filed_set_id" property="filedSetId" />
+        <result column="user_id" property="userId" />
+        <result column="type" property="type" />
+        <result column="self_adaption" property="selfAdaption" />
+        <result column="filed" property="filed" />
+        <result column="page" property="page" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        filed_set_id, user_id, type, self_adaption, filed, page, create_time
+    </sql>
+
+</mapper>
